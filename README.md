@@ -4,37 +4,67 @@ Landing page resmi untuk **Foid AI** (`foidai.app`), penyedia jasa setup AI Agen
 
 ---
 
-## 🚀 Panduan Deploy ke GitHub Pages
+## ⚠️ Kenapa Landing Page Belum Tampil di GitHub Pages?
 
-Proyek ini telah dikonfigurasi penuh agar dapat langsung diakses melalui **GitHub Pages** (baik via sub-domain `username.github.io/repo` maupun custom domain `foidai.app`).
+Jika halaman GitHub Pages Anda masih menampilkan **404 Not Found** atau **halaman kosong/belum muncul**, berikut adalah penyebab dan solusinya:
 
-### Langkah 1: Push Kode ke GitHub
-Pastikan repositori Anda telah di-push ke GitHub di branch `main` atau `master`:
+### 1. Pengaturan "Source" di GitHub Masih Belum Diaktifkan
+Secara default, GitHub Pages **TIDAK aktif** secara otomatis sampai Anda mengaktifkannya di pengaturan repositori:
+1. Buka repositori Anda di browser GitHub (`https://github.com/<username>/<repo-name>`).
+2. Klik tab **Settings** (ikon gerigi di atas).
+3. Di menu sidebar kiri, klik **Pages**.
+4. Di bagian **Build and deployment**:
+   - Cari dropdown **Source**.
+   - Ubah dari *Deploy from a branch* menjadi **GitHub Actions**.
+5. Buka tab **Actions** di repositori Anda. Anda akan melihat alur kerja **"Deploy to GitHub Pages"** sedang berjalan. Tunggu sekitar 1 menit hingga statusnya berubah menjadi hijau (centang ✅).
+6. Link landing page Anda akan langsung aktif dan bisa dibuka!
+
+---
+
+### 2. Cara Alternatif (Deploy Cepat via Terminal dengan 1 Perintah)
+Jika Anda tidak ingin menggunakan GitHub Actions, kami telah memasang tool `gh-pages`:
+1. Di terminal lokal proyek Anda, jalankan perintah:
+   ```bash
+   npm run deploy
+   ```
+2. Perintah ini akan otomatis mem-build proyek dan mengirim hasilnya ke branch `gh-pages`.
+3. Di **Settings** > **Pages**, pilih **Source: Deploy from a branch**, lalu pilih branch **gh-pages** dan folder **/ (root)**.
+
+---
+
+## 🚀 Langkah Deploy dari Awal ke GitHub
+
+Jika Anda baru mengekspor kode ini dari Google AI Studio:
+
 ```bash
+# 1. Inisialisasi Git
+git init
 git add .
-git commit -m "feat: landing page foid ai with github pages support"
-git push origin main
+git commit -m "feat: initial landing page foid ai"
+
+# 2. Hubungkan ke repositori GitHub Anda
+git branch -M main
+git remote add origin https://github.com/<username>/<repo-name>.git
+
+# 3. Push kode
+git push -u origin main
 ```
 
-### Langkah 2: Aktifkan GitHub Actions di Repositori
-1. Buka repositori Anda di GitHub.
-2. Masuk ke tab **Settings** > **Pages** (di sidebar kiri).
-3. Pada bagian **Build and deployment**:
-   - Pilih **Source**: `GitHub Actions`.
-4. Otomatis workflow `.github/workflows/deploy.yml` akan berjalan setiap kali Anda melakukan push ke branch `main`.
+---
 
-### Langkah 3: Custom Domain (Opsional: `foidai.app`)
-File `public/CNAME` telah disediakan dengan isi `foidai.app`.
-Jika Anda ingin menghubungkan domain sendiri:
-1. Di **Settings** > **Pages** > **Custom domain**, masukkan `foidai.app`.
+## 🌐 Menghubungkan Custom Domain (`foidai.app`)
+
+File `public/CNAME` telah otomatis disertakan dengan domain `foidai.app`.
+Untuk mengaktifkannya:
+1. Di repositori GitHub: **Settings** > **Pages** > **Custom domain** > masukkan `foidai.app`.
 2. Centang **Enforce HTTPS**.
-3. Di DNS provider domain Anda (Cloudflare, Namecheap, Niagahoster, dll.), arahkan DNS:
+3. Di panel DNS penyedia domain Anda, arahkan DNS:
    - **Type A**:
      - `185.199.108.153`
      - `185.199.109.153`
      - `185.199.110.153`
      - `185.199.111.153`
-   - **Type CNAME** (untuk subdomain seperti `www`): `<username>.github.io`.
+   - **Type CNAME** (untuk subdomain `www`): `<username>.github.io`.
 
 ---
 
@@ -53,14 +83,3 @@ npm run build
 # Menjalankan preview hasil build lokal
 npm run preview
 ```
-
----
-
-## ⚙️ Fitur & Spesifikasi Landing Page
-- **Dark Mode Modern**: Menggunakan palet `bg-neutral-950` dengan aksen oranye cerah (`#FF5A00`).
-- **Logo Resmi FOID**: Vektor emblem sirkuit otak (*neural network*) + tipografi tegas FOID.
-- **Hero Dashboard Hostinger**: Replikasi panel server VPS Hostinger (AMD EPYC, KVM 4, CPU 45%, Memory 32%).
-- **Bento Grid Fitur**: Penjelasan fitur Hermes AI Agent, isolasi data privat, memori persisten SQLite, dan AMD EPYC NVMe.
-- **Tabel Harga 3 Paket**: Starter Automation, Business Workflow (*Paling Populer* dengan highlight oranye), dan Enterprise Agent.
-- **Kalkulator Simulasi ROI Interaktif**: Slider dinamis untuk menghitung penghematan biaya & jam kerja.
-- **FAQ Accordion & Footer**: Newsletter form, kontak WhatsApp resmi (`0822-4799-0923`), dan watermark brand.
