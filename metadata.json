@@ -1,0 +1,6 @@
+{
+  "name": "Foid AI - Setup Hermes AI Agent on VPS",
+  "description": "Layanan setup dan konfigurasi AI Agent cerdas berbasis Hermes di VPS High-Performance (AMD EPYC & NVMe). Otomatisasi bisnis 24/7 dengan memori persisten dan custom skills.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

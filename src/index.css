@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: radial-gradient(rgba(103, 61, 230, 0.15) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-grid-dense {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0720;
+}
+::-webkit-scrollbar-thumb {
+  background: #2f1c6a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #673de6;
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none">
+  <!-- Brain Icon -->
+  <g stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left Circuit Stem with Dot -->
+    <circle cx="27" cy="20" r="3.2" fill="#ffffff" stroke="none" />
+    <path d="M27 23v29c0 5-3.5 8.5-8.5 8.5s-8.5-4-8.5-9.5c0-5 3.5-9 8-9" />
+
+    <!-- Right Circuit Stem with Dot -->
+    <circle cx="43" cy="20" r="3.2" fill="#ffffff" stroke="none" />
+    <path d="M43 23v29c0 5 3.5 8.5 8.5 8.5s8.5-4 8.5-9.5c0-5-3.5-9-8-9" />
+
+    <!-- Left Outer Lobes -->
+    <path d="M33 14c-3-4-8.5-7-15-5.5C11 10 6 16.5 6 23.5c0 5 2.5 9.5 7 11.5" />
+    <path d="M13 33c-5 2-8.5 7-8.5 13 0 8 6.5 14.5 14.5 14.5 8 0 13.5-5.5 14-13.5" />
+
+    <!-- Right Outer Lobes -->
+    <path d="M37 14c3-4 8.5-7 15-5.5 7 1.5 12 8 12 15 0 5-2.5 9.5-7 11.5" />
+    <path d="M57 33c5 2 8.5 7 8.5 13 0 8-6.5 14.5-14.5 14.5-8 0-13.5-5.5-14-13.5" />
+  </g>
+
+  <!-- Typography FOID -->
+  <text x="80" y="48" font-family="'Inter', sans-serif" font-weight="900" font-size="40" fill="#ffffff" letter-spacing="2">FOID</text>
+  <text x="195" y="48" font-family="'Inter', sans-serif" font-weight="900" font-size="40" fill="#FF5A00" letter-spacing="1">AI</text>
+</svg>
