@@ -54,8 +54,10 @@ git push -u origin main
 
 ## 🌐 Menghubungkan Custom Domain (`foidai.app`)
 
-File `public/CNAME` telah otomatis disertakan dengan domain `foidai.app`.
-Untuk mengaktifkannya:
+Secara default project ini sekarang deploy ke URL GitHub Pages repository:
+`https://fauzulazkiaa.github.io/agent.foidai.app/`.
+
+Jika ingin memakai custom domain `foidai.app`, buat file `public/CNAME` berisi domain tersebut lalu:
 1. Di repositori GitHub: **Settings** > **Pages** > **Custom domain** > masukkan `foidai.app`.
 2. Centang **Enforce HTTPS**.
 3. Di panel DNS penyedia domain Anda, arahkan DNS:
